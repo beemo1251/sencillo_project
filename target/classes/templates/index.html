@@ -102,7 +102,7 @@
                 <div class="row row-cols-1 row-cols-md-4 g-4">
                     <div class="col" th:each="p : ${lstProducto}">
                         <div class="card h-100">
-                            <img src="img/producto-img/1.png" class="card-img-top" alt="...">
+                            <img th:src="@{img/producto-img/}+${p.codProducto}+@{.jpg}" class="card-img-top" alt="...">
                             <div class="card-body">
                             	<span th:text="${p.marca}"></span><br>
                                 <h5 class="card-title" th:text="${p.descripcion}"></h5>
