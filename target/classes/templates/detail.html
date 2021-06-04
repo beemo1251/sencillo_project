@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="extra/logo.png" type="image/x-icon" />
+
+  <!-- Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
+  <!-- Animate On Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Custom StyleSheet -->
+  <link rel="stylesheet" href="css/product.css"/>
+
+  <title>Phone Shop</title>
+</head>
+
+<body>
+  <div class="head">
+    	<div class="navbar__1">
+            <div class="navbar__1_item">
+            	<a href="/index"><img src="img/index-img/sencillo.png" alt=""></a>
+            </div>
+            <div class="navbar__1_item">
+                <div class="item_buscar">
+                    <input type="text" class="text_buscar" name="" id="" placeholder="Buscar productos por nombre...">
+                    <a href="" class="fas fa-search btn_buscar"></a>
+                </div>
+            </div>
+            <div class="navbar__1_item">
+                <a href="/login" class="item user">
+                    <img src="img/index-img/user.png">
+                    <p>Mi Cuenta</p>
+                </a>
+            </div>
+            <div class="navbar__1_item">
+                <a href="/carrito" class="item carrito">
+                    <!-- <span class="fas fa-shopping-cart"></span> -->
+                    <img src="img/index-img/carrito.png">
+                    <p>Carrito</p>
+                </a>
+            </div>
+        </div>
+	</div>
+  <main id="main">
+    <div class="container">
+      <!-- Products Details -->
+      <section class="section product-details__section">
+        <div class="product-detail__container">
+          <div class="product-detail__left">
+            <div class="details__container--left">
+              <div class="product__picture" id="product__picture">
+                <!-- <div class="rect" id="rect"></div> -->
+                <div class="picture__container">
+                  <img src="img/producto-img/1.png" id="pic" />
+                </div>
+              </div>
+              <div class="zoom" id="zoom"></div>
+            </div>
+
+            <div class="product-details__btn">
+              <a class="add" href="#">
+                AGREGAR AL CARRITO</a>
+              <a class="buy" href="#">
+                COMPRA AHORA
+              </a>
+            </div>
+          </div>
+
+          <div class="product-detail__right">
+            <div class="product-detail__content">
+              <h2>Marinela</h2>
+              <h1>Pastelito Pingüino Marinela 80 g</h1>
+              <ul class="product__info">
+                <li>
+                  <a href="#" class="in-stock">En stock (30 Items)</a>
+                </li>
+              </ul>
+              <div class="price">
+                <span class="new__price">S/. 3,50</span>
+              </div>
+              
+              <div class="product__info-container">
+                <ul class="product__info">
+                  <!-- Para algún producto
+                  <li class="select">
+                    <div class="select__option">
+                      <label for="colors">Color</label>
+                      <select name="colors" id="colors" class="select-box">
+                        <option value="blue">blue</option>
+                        <option value="red">red</option>
+                      </select>
+                    </div>
+                    <div class="select__option">
+                      <label for="size">Inches</label>
+                      <select name="size" id="size" class="select-box">
+                        <option value="6.65">6.65</option>
+                        <option value="7.50">7.50</option>
+                      </select>
+                    </div>
+                  </li>-->
+                  <li>
+                    <div class="input-counter">
+                      <span>Cantidad: </span>
+                      <div>
+                        <input type="text" min="1" value="1" max="10" class="counter-btn">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!--
+                  <div class="product-info__btn">
+                  <a href="#">
+                    <span>
+                      <img src="#">
+                    </span>&nbsp;
+                    CATEGORIA
+                  </a>
+                </div>
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Products -->
+      <section class="section related__products">
+        <div class="title__container">
+          <div class="section__title filter-btn active">
+            <span class=" dot"></span>
+            <h1 class="primary__title">Productos relacionados</h1>
+          </div>
+        </div>
+        <div class="container" data-aos="fade-up" data-aos-duration="1200">
+          <div class="glide" id="glide_3">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides latest-center">
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="images/products/gansito.png" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Gansito</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>Price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>Price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src="#" alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>Producto</h3>
+                      <div class="product__price">
+                        <h4>price</h4>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Añadir al carrito</button></a>
+                    </div>
+                  </div>
+              </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <img src="extra/row-left.png">
+              </button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                <img src="extra/row-right.png">
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Glide Carousel Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+
+  <!-- Animate On Scroll -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="js/product-slider.js"></script>
+</body>
+
+</html>
