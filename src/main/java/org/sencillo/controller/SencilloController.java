@@ -25,7 +25,7 @@ public class SencilloController {
 	@GetMapping("/login")
 	public String login(Model model) {
 		System.out.println("login");
-		return "login";
+		return "index";
 	}
 	
 	@GetMapping("/carrito")
