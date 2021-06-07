@@ -19,6 +19,12 @@ public class SencilloController {
 	@Autowired
 	private IProductoRepository repo;
 	
+	@Autowired
+	private IClienteRepository repoC;
+	
+	@Autowired
+	private IUsuarioRepository repoU;
+	
 	@GetMapping("/index")
 	public String listarProd(@ModelAttribute Producto producto, Model model) {
 		model.addAttribute("lstProducto", repo.findAll());
@@ -45,12 +51,7 @@ public class SencilloController {
 		return "detail";
 	}
 	
-	@Autowired
-	private IClienteRepository repoC;
-	
-	@Autowired
-	private IUsuarioRepository repoU;
-	
+	/* Empieza el registro */
 	@GetMapping("/registro")
 	public String cargarProd(Model model) {
 		model.addAttribute("producto", new Producto());
@@ -67,5 +68,7 @@ public class SencilloController {
 		repoU.save(usuario);
 		return "login";
 	}
+	
+	/* Fin del registro */
 	
 }
