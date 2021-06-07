@@ -1,7 +1,11 @@
 package org.sencillo.controller;
 
+import org.sencillo.model.Cliente;
 import org.sencillo.model.Producto;
+import org.sencillo.model.Usuario;
+import org.sencillo.repository.IClienteRepository;
 import org.sencillo.repository.IProductoRepository;
+import org.sencillo.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +44,28 @@ public class SencilloController {
 		model.addAttribute("lstProducto", repo.findAll());
 		return "detail";
 	}
-
 	
+	@Autowired
+	private IClienteRepository repoC;
+	
+	@Autowired
+	private IUsuarioRepository repoU;
+	
+	@GetMapping("/registro")
+	public String cargarProd(Model model) {
+		model.addAttribute("producto", new Producto());
+		model.addAttribute("usuario", new Usuario());
+		return "login";
+	}
+	
+	@PostMapping("/grabar")
+	public String guardarProd(@ModelAttribute Cliente cliente, Usuario usuario) {
+		//guardar el producto
+		System.out.println(cliente);
+		System.out.println(usuario);
+		repoC.save(cliente);
+		repoU.save(usuario);
+		return "login";
+	}
 	
 }
