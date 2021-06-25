@@ -41,11 +41,11 @@
                 </a>
               </div>
             </form>
-            <form th:object="${cliente}" th:action="@{/grabar}" method="POST" class="sign-up-form">
+            <form th:object="${registra}" th:action="@{/grabar}" method="POST" class="sign-up-form">
               <h2 class="title">Registrarse</h2>
               <div class="input-field">
                 <i class="fas fa-id-card"></i>
-                <input th:field="*{codcliente}" type="text" placeholder="DNI" />
+                <input th:field="*{codCliente}" type="text" placeholder="DNI" />
               </div>
               <div class="input-field">
                 <i class="fas fa-user"></i>
@@ -57,11 +57,11 @@
               </div>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
-                <input th:each="u :${usuario}" th:value="${u.codUsuario}" th:field="*{email}" type="email" placeholder="Correo" />
+                <input th:field="*{email}" type="email" placeholder="Correo" />
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input th:each="u :${usuario}" th:value="${u.codUsuario}" th:field="*{password}" type="password" placeholder="Contaseña" />
+                <input th:field="*{contraseña}" type="password" placeholder="Contaseña" />
               </div>
               <input type="submit" class="btn" value="Registrarme" />
               <p class="social-text">O registrate con una red social</p>

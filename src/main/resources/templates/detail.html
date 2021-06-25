@@ -46,7 +46,7 @@
 			</div>
 		</div>
 	</div>
-	<main id="main">
+	<main id="main" th:object="${Produc}">
 		<div class="container">
 			<!-- Products Details -->
 			<section class="section product-details__section">
@@ -56,7 +56,7 @@
 							<div class="product__picture" id="product__picture">
 								<!-- <div class="rect" id="rect"></div> -->
 								<div class="picture__container">
-									<img src="img/producto-img/1.jpg" id="pic" />
+									<img th:src="@{img/producto-img/}+*{codProducto}+@{.jpg}" id="pic" />
 								</div>
 							</div>
 							<div class="zoom" id="zoom"></div>
@@ -73,15 +73,15 @@
 					</div>
 						<div>
 							<div class="product-detail__content" >
-								<h2 th:text="${codProducto}"></h2>
-								<h1>Pastelito Pingüino Marinela 80 g</h1>
+								<h2><span th:text="*{marca}"></span></h2>
+								<h1 th:text="*{descripcion}"></h1>
 								<ul class="product__info">
 									<li>
-										<a href="#" class="in-stock">En stock (30 Items)</a>
+										En stock(<span class="in-stock" th:text="*{stock}"></span> Items)
 									</li>
 								</ul>
 								<div class="price">
-									<span class="new__price">S/. 3,50</span>
+									S/. <span class="new__price" th:text="*{precio}"></span>
 								</div>
 
 								<div class="product__info-container">
@@ -106,164 +106,29 @@
 				<div class="title__container">
 					<div class="section__title filter-btn active">
 						<span class=" dot"></span>
-						<h1 class="primary__title">Productos relacionados</h1>
+						<h1 class="primary__title">Más Productos</h1>
 					</div>
 				</div>
 				<div class="container" data-aos="fade-up" data-aos-duration="1200">
 					<div class="glide" id="glide_3">
 						<div class="glide__track" data-glide-el="track">
 							<ul class="glide__slides latest-center">
-								<li class="glide__slide">
+								<li class="glide__slide" th:each="p : ${lstProducto}">
 									<div class="product">
 										<div class="product__header">
-											<a href="#"><img src="images/products/gansito.png" alt="product"></a>
+											<a href="#"><img th:src="@{img/producto-img/}+${p.codProducto}+@{.jpg}" alt="product"></a>
 										</div>
 										<div class="product__footer">
-											<h3>Gansito</h3>
+											<h3 th:text="${p.descripcion}"></h3>
+											<h5 th:text="${p.marca}"></h5>
 											<div class="product__price">
-												<h4>price</h4>
+												<h4 th:text="${p.precio}">price</h4>
 											</div>
 											<a href="#"><button type="submit" class="product__btn">Añadir al
 													carrito</button></a>
 										</div>
 									</div>
 								</li>
-
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>Price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>Price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="product">
-										<div class="product__header">
-											<a href="#"><img src="#" alt="product"></a>
-										</div>
-										<div class="product__footer">
-											<h3>Producto</h3>
-											<div class="product__price">
-												<h4>price</h4>
-											</div>
-											<a href="#"><button type="submit" class="product__btn">Añadir al
-													carrito</button></a>
-										</div>
-									</div>
 							</ul>
 						</div>
 						<div class="glide__arrows" data-glide-el="controls">
